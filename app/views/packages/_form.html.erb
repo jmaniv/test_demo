@@ -1,0 +1,18 @@
+<%= form_for @package do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </p>
+  
+  <p>
+    <%= f.label :test_ids, "Select Test" %><br />
+    <%= f.select "test_ids", options_from_collection_for_select(@tests, :id, :name, @package.test_ids), {}, { :multiple => true } %>
+  </p>
+  
+  <p><%= f.submit %></p>
+<% end %>

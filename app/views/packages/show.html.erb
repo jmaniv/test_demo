@@ -1,0 +1,21 @@
+<% title "Package" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @package.name %>
+</p>
+<p>
+  <strong>Cost:</strong>
+  <%= @package.cost %>
+</p>
+
+<p>
+  <strong>Available Tests</strong>
+  <%= @package.tests.collect(&:name).join(", ") %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_package_path(@package) %> |
+  <%= link_to "Destroy", @package, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", packages_path %>
+</p>
