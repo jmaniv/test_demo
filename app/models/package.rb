@@ -5,7 +5,7 @@ class Package < ActiveRecord::Base
   has_many :tests, :through => :package_tests
   
   # Client requirement is drop-down interface for selection of multiple tests in package form. 
-  # So I don't thing accepts_nested_attributes_for is easy way to insert record in join table table(package_tests). 
+  # So I don't thing accepts_nested_attributes_for is suitable one to insert record in join table table(package_tests). 
   
   validate :at_most_3_tests
 
